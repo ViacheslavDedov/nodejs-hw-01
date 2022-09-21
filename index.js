@@ -41,4 +41,24 @@ async function invokeAction({ action, id, name, email, phone }) {
   }
 }
 
-invokeAction(argv);
+// --- 1 вариант --- //
+
+invokeAction(argv).then().catch()
+
+// --- 2 вариант --- //
+
+// const start = async (argv) => {
+//     try {
+//         await invokeAction(argv);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
+
+// start(argv);
+
+// --- 3 вариант --- //
+
+// (async () => {
+//   await invokeAction(argv)
+// })();
