@@ -3,7 +3,7 @@ const path = require("path");
 const { nanoid } = require("nanoid");
 
 const contactsPath = path.join(__dirname, "./db/contacts.json");
-const updateBooks = async (contacts) =>
+const updateContacts = async (contacts) =>
   await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
 
 async function listContacts() {
@@ -36,7 +36,7 @@ async function removeContact(contactId) {
       return null;
     }
     const [result] = contacts.splice(indexEl, 1);
-    await updateBooks(contacts);
+    await updateContacts(contacts);
     return result;
   } catch (err) {
     console.error(err);
